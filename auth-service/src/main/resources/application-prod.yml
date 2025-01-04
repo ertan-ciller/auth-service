@@ -1,15 +1,23 @@
 spring:
   datasource:
     url: jdbc:${DATABASE_URL}
+    username: ${PGUSER}
+    password: ${PGPASSWORD}
     driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 5
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     properties:
       hibernate:
         format_sql: false
         dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          lob:
+            non_contextual_creation: true
 
 application:
   security:
