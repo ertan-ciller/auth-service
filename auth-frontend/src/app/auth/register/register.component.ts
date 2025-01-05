@@ -33,7 +33,7 @@ export class RegisterComponent {
       this.authService.register(this.registerForm.value).subscribe({
         next: (response: any) => {
           this.toastr.success(
-            'Kayıt işlemi başarılı! Lütfen e-posta adresinizi doğrulayın.',
+            'Kayıt işlemi başarılı! Giriş yapabilirsiniz.',
             'Başarılı'
           );
           this.router.navigate(['/login']);
