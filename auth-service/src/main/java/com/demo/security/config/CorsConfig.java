@@ -14,19 +14,15 @@ public class CorsConfig {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
         
-        // Production frontend URL'ini ekleyin
-        config.addAllowedOrigin("https://auth-frontend.onrender.com");
+        // Frontend URL'lerini ekleyin
+        config.addAllowedOrigin("https://auth-frontend-1.onrender.com");  // Production frontend URL
+        config.addAllowedOrigin("http://localhost:4200");  // Development için
         
-        // Development için localhost
-        config.addAllowedOrigin("http://localhost:4200");
-        
-        // Allow all headers
+        // Headers ve methods için izinler
         config.addAllowedHeader("*");
-        
-        // Allow all methods
         config.addAllowedMethod("*");
         
-        // Allow credentials
+        // Credentials'a izin ver
         config.setAllowCredentials(true);
         
         source.registerCorsConfiguration("/**", config);
