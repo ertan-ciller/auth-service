@@ -15,7 +15,7 @@ public class CorsConfig {
         CorsConfiguration config = new CorsConfiguration();
         
         // Frontend URL'lerini ekleyin
-        config.addAllowedOrigin("https://auth-frontend-1.onrender.com");  // Production frontend URL
+        config.addAllowedOrigin("https://auth-frontend-duif.onrender.com");  // Production frontend URL
         config.addAllowedOrigin("http://localhost:4200");  // Development için
         
         // Headers ve methods için izinler
